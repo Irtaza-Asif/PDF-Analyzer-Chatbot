@@ -1,7 +1,7 @@
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain_community.vectorstores import Chroma
+from langchain_community.vectorstores import FAISS
 from langchain.chains import RetrievalQA
 from langchain_community.llms import HuggingFacePipeline
 from transformers import pipeline
@@ -27,7 +27,7 @@ def create_embeddings():
 
 
 def create_vectorstore(chunks, embeddings):
-    return Chroma.from_documents(chunks, embeddings)
+    return FAISS.from_documents(chunks, embeddings)
 
 
 def load_llm():
