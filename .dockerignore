@@ -1,0 +1,14 @@
+@'
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+.git/
+.gitignore
+.env
+*.md
+temp.pdf
+.streamlit/
+*.log
+'@ | Out-File -FilePath ".dockerignore" -Encoding utf8 -NoNewline
